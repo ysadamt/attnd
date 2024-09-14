@@ -5,19 +5,11 @@ import NavBar from "@/components/Navbar"
 import AttendanceChart from "@/components/stats/AttendanceChart"
 import MostActive from "@/components/stats/MostActive"
 import NewMembers from "@/components/stats/NewMembers"
-import { useEffect } from "react"
 
 export const description =
   "An application shell with a header and main content area. The header has a navbar, a search input and and a user nav dropdown. The user nav is toggled by a button with an avatar image."
 
 export function Statistics() {
-
-  useEffect(() => {
-    const query = new URLSearchParams(window.location.search);
-
-    console.log(query.get("refresh"));
-  }, []);
-
   return (
     <div className="flex min-h-screen w-full flex-col">
       <NavBar />
