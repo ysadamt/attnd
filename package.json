@@ -24,6 +24,7 @@
     "react-dom": "^18",
     "react-photo-album": "^3.0.2",
     "recharts": "^2.12.7",
+    "react-qr-code": "^2.0.15",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7"
   },
