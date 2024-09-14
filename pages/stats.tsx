@@ -1,17 +1,3 @@
-
-
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-
 import Rsvps from "@/components/stats/Rsvps"
 import Attended from "@/components/stats/Attended"
 import ConversionRate from "@/components/stats/ConversionRate"
