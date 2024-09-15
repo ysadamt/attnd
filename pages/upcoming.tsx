@@ -26,11 +26,14 @@ export default function Page() {
                 {data.map((event) => (
                     // <div className="mb-4">
                     // </div>
-                    <Card className="max-w-lg mx-auto">
+                    <Card className="max-w-lg mx-auto mb-4">
                         <CardHeader>
                             <CardTitle>{event.name}</CardTitle>
                             <CardDescription>
-                                {event.location} {event.start}-{event.end}
+                                <p>{event.location}</p>
+                                <p>
+                                    {event.start}-{event.end}
+                                </p>
                             </CardDescription>
                         </CardHeader>
                         <CardContent>
