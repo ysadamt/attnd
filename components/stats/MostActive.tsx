@@ -12,7 +12,7 @@ import {
 
 const MostActive = () => {
   return (
-    <Card x-chunk="xl:col-span-2 dashboard-01-chunk-5">
+    <Card className="xl:col-span-2" x-chunk="dashboard-01-chunk-5">
       <CardHeader>
         <CardTitle>New Members</CardTitle>
       </CardHeader>
