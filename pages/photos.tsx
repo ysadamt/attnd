@@ -1,5 +1,3 @@
-// photos.ts
-
 export interface Photo {
   src: string;
   width: number;
@@ -8,47 +6,47 @@ export interface Photo {
 
 const photos: Photo[] = [
   {
-    src: "../public/photos/group1.jpg",
+    src: "/photos/group1.jpg",
     width: 800,
     height: 600,
   },
   {
-    src: "../public/photos/group2.jpg",
+    src: "/photos/group2.jpg",
     width: 1200,
     height: 800,
   },
   {
-    src: "../public/photos/group3.jpg",
+    src: "/photos/group3.jpg",
     width: 1200,
     height: 800,
   },
   {
-    src: "../public/photos/group4.jpg",
+    src: "/photos/group4.jpg",
     width: 1200,
     height: 800,
   },
   {
-    src: "../public/photos/group5.jpg",
+    src: "/photos/group5.jpg",
     width: 1200,
     height: 800,
   },
   {
-    src: "../public/photos/group6.jpg",
+    src: "/photos/group6.jpg",
     width: 1200,
     height: 800,
   },
   {
-    src: "../public/photos/group7.jpg",
+    src: "/photos/group7.jpg",
     width: 1200,
     height: 800,
   },
   {
-    src: "../public/photos/group8.jpg",
+    src: "/photos/group8.jpg",
     width: 1200,
     height: 800,
   },
   {
-    src: "../public/photos/group9.jpg",
+    src: "/photos/group9.jpg",
     width: 1200,
     height: 800,
   },
