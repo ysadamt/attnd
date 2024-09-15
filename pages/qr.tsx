@@ -18,10 +18,10 @@ export default function Page() {
 
     useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search);
-        const eventID = urlParams.get("event")
+        const eventID = urlParams.get("event")!;
 
         const startup = async () => {
-            const newId = await createId({eventID});
+            const newId = await createId({ eventID: eventID as Id<"events"> });
             setId(newId);
         };
         // create a link
@@ -37,14 +37,14 @@ export default function Page() {
     if (!data) {
         return;
     }
-    
-    if(data.scanned) {
-        router.reload()
+
+    if (data.scanned) {
+        router.reload();
     }
-    
-    console.log(data)
-    
-    console.log(baseURL + data._id)
+
+    console.log(data);
+
+    console.log(baseURL + data._id);
 
     return (
         <main className="">
