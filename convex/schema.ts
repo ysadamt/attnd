@@ -4,6 +4,7 @@ import { v } from "convex/values";
 export default defineSchema({
   qrids: defineTable({
     scanned: v.boolean(),
+    eventID: v.id("events"),
   }),
   users: defineTable({
     name: v.string(),

@@ -3,22 +3,16 @@ import { Id } from "@/convex/_generated/dataModel";
 import { useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import Link from "next/link";
-
-type Repo = {
-    name: string;
-    stargazers_count: number;
-};
-
-type Event = {
-    eventId: string;
-    name: string;
-    description: string;
-    start: string;
-    end: string;
-    location: string;
-    rsvps: Id<"users">[];
-    attendees: Id<"users">[];
-};
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
+import { buttonVariants } from "@/components/ui/button";
+import Navbar from "@/components/Navbar";
 
 export default function Page() {
     const data = useQuery(api.events.getEvents);
@@ -26,10 +20,55 @@ export default function Page() {
         return;
     }
     return (
-        <main>
-            {data.map((event) => (
-                <Link href={`/qr/${event._id}`}>{event.name}</Link>
-            ))}
-        </main>
+        <>
+            <Navbar />
+            <main className="p-2">
+                {data.map((event) => (
+                    // <div className="mb-4">
+                    // </div>
+                    <Card className="max-w-lg mx-auto">
+                        <CardHeader>
+                            <CardTitle>{event.name}</CardTitle>
+                            <CardDescription>
+                                {event.location} {event.start}-{event.end}
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <p>{event.description}</p>
+                        </CardContent>
+                        <CardFooter className="flex flex-wrap gap-2">
+                            <Link
+                                href={`/qr/?event=${event._id}`}
+                                className={buttonVariants({
+                                    variant: "outline",
+                                })}
+                            >
+                                Dynamic code
+                            </Link>
+                            <Link
+                                href={`/static/?event=${event._id}`}
+                                className={buttonVariants({
+                                    variant: "outline",
+                                })}
+                            >
+                                Static code
+                            </Link>
+                            <Link
+                                href={"/stats"}
+                                className={buttonVariants({ variant: "link" })}
+                            >
+                                View stats
+                            </Link>
+                            <Link
+                                href={"/photoGallery"}
+                                className={buttonVariants({ variant: "link" })}
+                            >
+                                Photos
+                            </Link>
+                        </CardFooter>
+                    </Card>
+                ))}
+            </main>
+        </>
     );
 }
