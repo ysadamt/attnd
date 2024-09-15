@@ -1,20 +1,9 @@
 import {
-  Activity,
-  ArrowUpRight,
-  CircleUser,
-  CreditCard,
+  ClipboardCheck,
   Menu,
   Package2,
   Search,
 } from "lucide-react"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import Link from "next/link"
@@ -29,8 +18,8 @@ const Navbar = () => {
           href="#"
           className="flex items-center gap-2 text-lg font-semibold md:text-base"
         >
-          <Package2 className="h-6 w-6" />
-          <span className="sr-only">Acme Inc</span>
+          <ClipboardCheck className="h-6 w-6" />
+          <span className="sr-only">Org Portal</span>
         </Link>
         <Link
           href="#"
@@ -42,25 +31,7 @@ const Navbar = () => {
           href="#"
           className="text-muted-foreground transition-colors hover:text-foreground"
         >
-          Orders
-        </Link>
-        <Link
-          href="#"
-          className="text-muted-foreground transition-colors hover:text-foreground"
-        >
-          Products
-        </Link>
-        <Link
-          href="#"
-          className="text-muted-foreground transition-colors hover:text-foreground"
-        >
-          Customers
-        </Link>
-        <Link
-          href="#"
-          className="text-muted-foreground transition-colors hover:text-foreground"
-        >
-          Analytics
+          Events
         </Link>
       </nav>
       <Sheet>
@@ -80,8 +51,8 @@ const Navbar = () => {
               href="#"
               className="flex items-center gap-2 text-lg font-semibold"
             >
-              <Package2 className="h-6 w-6" />
-              <span className="sr-only">Acme Inc</span>
+              <ClipboardCheck className="h-6 w-6" />
+              <span className="sr-only">Org Portal</span>
             </Link>
             <Link href="#" className="hover:text-foreground">
               Dashboard
