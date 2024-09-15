@@ -60,7 +60,7 @@ export default function Page() {
                                 View stats
                             </Link>
                             <Link
-                                href={"/photoGallery"}
+                                href={"/photos"}
                                 className={buttonVariants({ variant: "link" })}
                             >
                                 Photos
