@@ -1,11 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
-import { ConvexHttpClient, ConvexClient } from "convex/browser";
-
-// const updateLink = ({id} : {id: string}) => {
-//     console.log(id)
-// }
+import { ConvexHttpClient } from "convex/browser";
 
 export default async function handler(
     req: NextApiRequest,
@@ -16,7 +12,9 @@ export default async function handler(
         method,
     } = req;
 
-    const httpClient = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL as string);
+    const httpClient = new ConvexHttpClient(
+        process.env.NEXT_PUBLIC_CONVEX_URL as string
+    );
 
     if (method !== "GET") {
         return res.status(405).json({ error: "Method Not Allowed" });
@@ -29,7 +27,16 @@ export default async function handler(
     console.log(`Received personalID: ${personalID}`);
 
     if (personalID !== "") {
-        await httpClient.mutation(api.qr.updateLink, {id: personalID as Id<"qrids">})
+        try {
+            await httpClient.mutation(api.qr.updateLink, {
+                id: personalID as Id<"qrids">,
+            });
+        } catch {
+            const redirectUrl = "/used";
+
+            res.writeHead(302, { Location: redirectUrl });
+            res.end();
+        }
     }
 
     const redirectUrl = `/`;
