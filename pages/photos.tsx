@@ -1,55 +1,43 @@
-export interface Photo {
-  src: string;
-  width: number;
-  height: number;
+import { useState } from "react";
+
+import { RowsPhotoAlbum } from "react-photo-album";
+import "react-photo-album/rows.css";
+
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+
+// import optional lightbox plugins
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
+
+import photos from "../components/photoGallery";
+
+export default function App() {
+  const [index, setIndex] = useState(-1);
+
+  return (
+    <>
+      <header>
+        <h1>Photo Gallery</h1>
+      </header>
+
+      <RowsPhotoAlbum
+        photos={photos}
+        targetRowHeight={150}
+        onClick={({ index }) => setIndex(index)}
+      />
+
+      <Lightbox
+        slides={photos}
+        open={index >= 0}
+        index={index}
+        close={() => setIndex(-1)}
+        // enable optional lightbox plugins
+        plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+      />
+    </>
+  );
 }
-
-const photos: Photo[] = [
-  {
-    src: "/photos/group1.jpg",
-    width: 800,
-    height: 600,
-  },
-  {
-    src: "/photos/group2.jpg",
-    width: 1200,
-    height: 800,
-  },
-  {
-    src: "/photos/group3.jpg",
-    width: 1200,
-    height: 800,
-  },
-  {
-    src: "/photos/group4.jpg",
-    width: 1200,
-    height: 800,
-  },
-  {
-    src: "/photos/group5.jpg",
-    width: 1200,
-    height: 800,
-  },
-  {
-    src: "/photos/group6.jpg",
-    width: 1200,
-    height: 800,
-  },
-  {
-    src: "/photos/group7.jpg",
-    width: 1200,
-    height: 800,
-  },
-  {
-    src: "/photos/group8.jpg",
-    width: 1200,
-    height: 800,
-  },
-  {
-    src: "/photos/group9.jpg",
-    width: 1200,
-    height: 800,
-  },
-];
-
-export default photos;
