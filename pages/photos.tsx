@@ -14,62 +14,26 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 import photos from "../components/photoGallery";
+import Navbar from "@/components/Navbar";
+import { Caprasimo } from "next/font/google";
+
+const caprasimo = Caprasimo({ weight: "400", subsets: ["latin"] });
 
 export default function App() {
   const [index, setIndex] = useState(-1);
 
   return (
     <>
-      <header
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "10px",
-          backgroundColor: "#333",
-          color: "#fff",
-        }}
-      >
-        <h1>Photo Gallery</h1>
-        <nav>
-          <ul
-            style={{
-              display: "flex",
-              listStyle: "none",
-              margin: 0,
-              padding: 0,
-            }}
-          >
-            <li style={{ margin: "0 10px" }}>
-              <a href="#home" style={{ color: "#fff", textDecoration: "none" }}>
-                Home
-              </a>
-            </li>
-            <li style={{ margin: "0 10px" }}>
-              <a
-                href="#about"
-                style={{ color: "#fff", textDecoration: "none" }}
-              >
-                About
-              </a>
-            </li>
-            <li style={{ margin: "0 10px" }}>
-              <a
-                href="#contact"
-                style={{ color: "#fff", textDecoration: "none" }}
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <Navbar />
 
-      <RowsPhotoAlbum
-        photos={photos}
-        targetRowHeight={150}
-        onClick={({ index }) => setIndex(index)}
-      />
+      <div className="p-4">
+        <h1 className={`${caprasimo.className} text-3xl mb-4`}>General Meeting Photos</h1>
+        <RowsPhotoAlbum
+          photos={photos}
+          targetRowHeight={150}
+          onClick={({ index }) => setIndex(index)}
+        />
+      </div>
 
       <Lightbox
         slides={photos}

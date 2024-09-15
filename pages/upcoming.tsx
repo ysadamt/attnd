@@ -22,7 +22,7 @@ export default function Page() {
     return (
         <>
             <Navbar />
-            <main className="p-2">
+            <main className="p-8">
                 {data.map((event) => (
                     // <div className="mb-4">
                     // </div>
@@ -56,12 +56,14 @@ export default function Page() {
                             <Link
                                 href={"/stats"}
                                 className={buttonVariants({ variant: "link" })}
+                                style={{ color: "black" }}
                             >
                                 View stats
                             </Link>
                             <Link
-                                href={"/photoGallery"}
+                                href={"/photos"}
                                 className={buttonVariants({ variant: "link" })}
+                                style={{ color: "black" }}
                             >
                                 Photos
                             </Link>
