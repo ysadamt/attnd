@@ -24,8 +24,6 @@ export default function Page() {
             const newId = await createId({ eventID: eventID as Id<"events"> });
             setId(newId);
         };
-        // create a link
-        // once that's done, set some state
         startup();
     }, []);
 
@@ -41,10 +39,6 @@ export default function Page() {
     if (data.scanned) {
         router.reload();
     }
-
-    console.log(data);
-
-    console.log(baseURL + data._id);
 
     return (
         <main className="">
