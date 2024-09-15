@@ -26,7 +26,7 @@ export default function Page() {
                 {data.map((event) => (
                     // <div className="mb-4">
                     // </div>
-                    <Card className="max-w-96 mx-auto">
+                    <Card className="max-w-lg mx-auto">
                         <CardHeader>
                             <CardTitle>{event.name}</CardTitle>
                             <CardDescription>
@@ -36,7 +36,7 @@ export default function Page() {
                         <CardContent>
                             <p>{event.description}</p>
                         </CardContent>
-                        <CardFooter className="flex gap-2">
+                        <CardFooter className="flex flex-wrap gap-2">
                             <Link
                                 href={`/qr/?event=${event._id}`}
                                 className={buttonVariants({
@@ -58,6 +58,12 @@ export default function Page() {
                                 className={buttonVariants({ variant: "link" })}
                             >
                                 View stats
+                            </Link>
+                            <Link
+                                href={"/photoGallery"}
+                                className={buttonVariants({ variant: "link" })}
+                            >
+                                Photos
                             </Link>
                         </CardFooter>
                     </Card>
