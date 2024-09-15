@@ -8,7 +8,7 @@ import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import { useRouter } from "next/router";
 
-export default function page() {
+export default function Page() {
     const [size, setSize] = useState(256);
     const [id, setId] = useState("");
     const baseURL = "/api/attendance/";
@@ -17,8 +17,11 @@ export default function page() {
     const createId = useMutation(api.qr.createLink);
 
     useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const eventID = urlParams.get("event")
+
         const startup = async () => {
-            const newId = await createId();
+            const newId = await createId({eventID});
             setId(newId);
         };
         // create a link
