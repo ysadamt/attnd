@@ -35,10 +35,6 @@ export default function Page() {
     if (!data) {
         return;
     }
-
-    if (data.scanned) {
-        router.reload();
-    }
     
     console.log(baseURL + data._id)
 
