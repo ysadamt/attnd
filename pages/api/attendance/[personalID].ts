@@ -31,7 +31,8 @@ export default async function handler(
             await httpClient.mutation(api.qr.updateLink, {
                 id: personalID as Id<"qrids">,
             });
-        } catch {
+        } catch (error){
+            console.log(error)
             const redirectUrl = "/used";
 
             res.writeHead(302, { Location: redirectUrl });
