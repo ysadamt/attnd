@@ -20,8 +20,49 @@ export default function App() {
 
   return (
     <>
-      <header>
+      <header
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "10px",
+          backgroundColor: "#333",
+          color: "#fff",
+        }}
+      >
         <h1>Photo Gallery</h1>
+        <nav>
+          <ul
+            style={{
+              display: "flex",
+              listStyle: "none",
+              margin: 0,
+              padding: 0,
+            }}
+          >
+            <li style={{ margin: "0 10px" }}>
+              <a href="#home" style={{ color: "#fff", textDecoration: "none" }}>
+                Home
+              </a>
+            </li>
+            <li style={{ margin: "0 10px" }}>
+              <a
+                href="#about"
+                style={{ color: "#fff", textDecoration: "none" }}
+              >
+                About
+              </a>
+            </li>
+            <li style={{ margin: "0 10px" }}>
+              <a
+                href="#contact"
+                style={{ color: "#fff", textDecoration: "none" }}
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
       </header>
 
       <RowsPhotoAlbum
