@@ -25,7 +25,7 @@ export default function Home() {
           <div className="p-4 flex flex-col w-full gap-8">
             <h1 className={`${caprasimo.className} text-3xl -mb-4`}>Current</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <Link href="/org1">
+              <Link href="/upcoming">
                 <Card className="bg-white hover:bg-[hsl(36,44%,80%)] transition-all h-64 flex justify-center items-center text-center">
                   <CardHeader>
                     <CardTitle className={`${caprasimo.className}`}>TAMUhack</CardTitle>
@@ -33,7 +33,7 @@ export default function Home() {
                   </CardHeader>
                 </Card>
               </Link>
-              <Link href="/org2">
+              <Link href="/upcoming">
                 <Card className="bg-white hover:bg-[hsl(36,44%,80%)] transition-all h-64 flex justify-center items-center text-center">
                   <CardHeader>
                     <CardTitle className={`${caprasimo.className}`}>HackMIT</CardTitle>
@@ -41,7 +41,7 @@ export default function Home() {
                   </CardHeader>
                 </Card>
               </Link>
-              <Link href="/org1">
+              <Link href="">
                 <Card className="bg-white hover:bg-[hsl(36,44%,80%)] transition-all h-64 flex justify-center items-center text-center">
                   <CardHeader>
                     <Plus className="h-12 w-12" />
@@ -51,7 +51,7 @@ export default function Home() {
             </div>
             <h1 className={`${caprasimo.className} text-3xl -mb-4`}>Archived</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <Link href="/org1">
+              <Link href="/upcoming">
                 <Card className="bg-white hover:bg-[hsl(36,44%,80%)] transition-all h-64 flex justify-center items-center text-center">
                   <CardHeader>
                     <CardTitle className={`${caprasimo.className}`}>TAMU SHPE</CardTitle>
@@ -59,11 +59,11 @@ export default function Home() {
                   </CardHeader>
                 </Card>
               </Link>
-              <Link href="/org2">
+              <Link href="/upcoming">
                 <Card className="bg-white hover:bg-[hsl(36,44%,80%)] transition-all h-64 flex justify-center items-center text-center">
                   <CardHeader>
                     <CardTitle className={`${caprasimo.className}`}>Logarythms</CardTitle>
-                    <CardDescription>2022 - 2023</CardDescription>
+                    <CardDescription>2023 - 2024</CardDescription>
                   </CardHeader>
                 </Card>
               </Link>

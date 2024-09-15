@@ -14,14 +14,14 @@ const Navbar = () => {
     <header className="sticky top-0 flex h-16 items-center justify-between gap-4 border-b bg-white px-4 md:px-6 z-50">
       <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
         <Link
-          href="#"
+          href="/"
           className={`${caprasimo.className} flex items-center gap-2 text-lg font-bold md:text-xl`}
         >
           Attnd
           <span className="sr-only">Attnd</span>
         </Link>
         <Link
-          href="#"
+          href="/"
           className="text-foreground transition-colors hover:text-foreground"
         >
           Dashboard
@@ -47,7 +47,7 @@ const Navbar = () => {
               Attnd
               <span className="sr-only">Attnd</span>
             </Link>
-            <Link href="#" className="hover:text-foreground">
+            <Link href="/" className="hover:text-foreground">
               Dashboard
             </Link>
           </nav>
