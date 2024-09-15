@@ -15,6 +15,15 @@ export const updateLink = mutation({
     args: { id: v.id("qrids") },
     handler: async (ctx, args) => {
         const { id } = args;
-        await ctx.db.patch(id, {scanned: true});
+        await ctx.db.patch(id, { scanned: true });
+    },
+});
+
+export const getLink = query({
+    args: { id: v.id("qrids") },
+    handler: async (ctx, args) => {
+        const { id } = args;
+        const doc = await ctx.db.get(id);
+        return doc;
     },
 });

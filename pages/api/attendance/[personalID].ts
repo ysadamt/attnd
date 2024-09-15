@@ -17,7 +17,6 @@ export default async function handler(
     } = req;
 
     const httpClient = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL as string);
-    const updateLink = httpClient.mutation(api.qr.updateLink)
 
     if (method !== "GET") {
         return res.status(405).json({ error: "Method Not Allowed" });
@@ -30,7 +29,7 @@ export default async function handler(
     console.log(`Received personalID: ${personalID}`);
 
     if (personalID !== "") {
-        await updateLink({ id: personalID as Id<"qrids"> });
+        await httpClient.mutation(api.qr.updateLink, {id: personalID as Id<"qrids">})
     }
 
     const redirectUrl = `/`;
