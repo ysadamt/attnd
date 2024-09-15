@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 export default function Page() {
     const [size, setSize] = useState(256);
     const [id, setId] = useState("");
-    const baseURL = "/api/attendance/";
+    const baseURL = "https://attnd-hackmit2024.vercel.app/api/attendance/";
     const router = useRouter();
 
     const createId = useMutation(api.qr.createLink);
